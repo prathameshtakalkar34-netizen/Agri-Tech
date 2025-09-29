@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Dashboard</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="css/new.css">
+<link rel="stylesheet" href="css/colour.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="home.html">🏠 Home</a>
+  <a href="profile.html" >👤Profile</a>
+  <a href="history.html">📜 History</a>
+  <a href="data.html">📊 Data</a>
+  <a href="settings.html">⚙ Settings</a>
+  <a href="image.html">🖼 Images</a>
+  <a href="scheme.html"> scheme</a>
+
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+ 
+<title>Agri-Tech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .icon {
+      font-size: 40px;
+      color: green;
+      border: 3px solid green;
+      border-radius: 40%;
+      padding: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align:center;">
+    <i class="fas fa-seedling icon"></i>
+     <h1>Agri-Tech</h1>
+  </div>
+</body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Empowering Farmers, Growing the Nation</h1>
+      <div class="hero-buttons">
+<button onclick="registerCrop()">Register Crop</button>
+
+<script>
+function registerCrop() {
+    alert('Register Crop');
+    window.location.href = 'crop.html';
+}
+</script>
+<button id="voiceBtn">Voice Assistant</button>
+
+<script>
+const voiceBtn = document.getElementById("voiceBtn");
+
+voiceBtn.addEventListener("click", () => {
+    // Start the voice assistant
+    if (typeof startListening === "function") {
+        startListening();
+    } else {
+        console.warn("Voice assistant function not found!");
+    }
+});
+</script>
+</script>
+        <button onclick="alert('Market Prices')">Market Prices</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Cards -->
+  <section class="categories">
+    <div class="category-card"onclick="location.href='vegetables.html'">🥦 Vegetables</div>
+    <div class="category-card" onclick="location.href='grains.html'">🌾 Grains</div>
+    <div class="category-card" onclick="location.href='fruits.html'">🍎 Fruits</div>
+    <div class="category-card" onclick="location.href='others.html'">🌿 Others</div>
+  </section>
+
+  <!-- Dashboard Cards -->
+  <section class="dashboard">
+    <div class="dashboard-card">
+      <h3>Market Prices</h3>
+      <canvas id="marketChart" width="500" height="120"></canvas>
+    </div>
+<section class="dashboard">
+  <div class="dashboard-card">
+    <h3>Weather</h3>
+    <p id="temperature">Temperature: 28°C</p>
+    <p id="humidity">Humidity: 65%</p>
+  </div>
+  <div class="dashboard-card">
+    <h3>Crop Health</h3>
+    <canvas id="healthChart" width="200" height="120"></canvas>
+  </div>
+</section>
+
+  <!-- Crop Image Capture -->
+  <section class="crop-analysis">
+    <h2>Crop Image Analysis</h2>
+    <video id="video" autoplay playsinline width="400" height="300" style="border-radius:10px; border:1px solid #ccc;"></video>
+    <div class="analysis-buttons">
+      <button id="captureBtn">📸 Capture</button>
+      <button id="analyzeBtn">Analyze</button>
+    </div>
+    <img id="preview" alt="Crop Preview" style="margin-top:10px; max-width:400px; border-radius:10px;">
+  </section>
+
+<!-- Scripts -->
+<script src="js/new.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Global Background for all pages */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  
+  /* Soft nature-inspired gradient */
+  background: linear-gradient(135deg, #e0f7ea, #f0f9f4);
+  
+  /* Optional subtle texture */
+  /* background-image: url('images/texture.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  color: #2c3e50; /* Dark text for readability */
+  transition: background 0.5s ease;
+}
+
+/* Optional: style all sections/cards with slight contrast */
+.card, .camera-panel, .preview-panel, .dashboard-card, .categories, .upload-box {
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .dashboard-card:hover, .categories:hover, .upload-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Optional: apply to sidebar */
+.sidebar {
+  background: linear-gradient(180deg, #388f82, #2c3e50);
+  transition: background 0.3s;
+}
+
+/* Smooth transition when hovering buttons */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}

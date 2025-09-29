@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer App Settings</title>
+  </head>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #d4fc79, #96e6a1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .settings-container {
+      width: 90%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .settings-sidebar {
+      width: 200px;
+      background: #2e7d32;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 12px;
+      text-align: left;
+      margin: 5px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: #4caf50;
+      transform: translateX(5px);
+    }
+
+    /* Content */
+    .settings-content {
+      flex: 1;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .setting-item {
+      background: #f4fdf4;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .setting-item:hover {
+      transform: scale(1.02);
+      background: #e6f7e6;
+    }
+
+    /* Toggle switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 25px;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      border-radius: 50%;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #4caf50;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+<div class="settings-container">
+  <!-- Sidebar -->
+  <div class="settings-sidebar">
+    <button class="tab-btn active" onclick="openTab('profile')">👤 Profile</button>
+    <button class="tab-btn" onclick="openTab('preferences')">⚙️ Preferences</button>
+    <button class="tab-btn" onclick="openTab('notifications')">🔔 Notifications</button>
+    <button class="tab-btn" onclick="openTab('security')">🔒 Security</button>
+    <button class="tab-btn" onclick="openTab('help')">❓ Help</button>
+    <button class="tab-btn" onclick="openTab('feadback')">Feadback</button>
+  </div>
+
+  <!-- Content -->
+  <div class="settings-content">
+    <!-- Profile -->
+    <div class="tab-content active" id="profile">
+      <h2>👤 Profile Settings</h2>
+      <div class="setting-item">Name: <strong>Rakesh kumar</strong></div>
+      <div class="setting-item">Contact: <strong>+91 9876543210</strong></div>
+      <div class="setting-item">Location: <strong>Nagpur, Maharashtra</strong></div>
+    </div>
+
+    <!-- Preferences -->
+    <div class="tab-content" id="preferences">
+      <h2>⚙️ Preferences</h2>
+      <div class="setting-item">Dark Mode
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+      <div class="setting-item">Language
+        <select>
+          <option>English</option>
+          <option>हिंदी</option>
+          <option>मराठी</option>
+          <option>urdu</option>
+          <option>tamil</option>
+          <option>bangali</option>
+        </select>
+      </div>
+      <div class="setting-item">Font Size
+        <select>
+          <option>Small</option>
+          <option selected>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="tab-content" id="notifications">
+      <h2>🔔 Notifications</h2>
+      <div class="setting-item">Market Price Alerts
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+      <div class="setting-item">Weather Alerts
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+      <div class="setting-item">Crop Disease Alerts
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div class="tab-content" id="security">
+      <h2>🔒 Security</h2>
+      <div class="setting-item">Change Password
+        <button>Update</button>
+      </div>
+      <div class="setting-item">Two-Factor Authentication
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+      <div class="setting-item">Privacy Settings
+        <button>Edit</button>
+      </div>
+    </div>
+
+    <!-- Help -->
+    <div class="tab-content" id="help">
+      <h2>❓ Help & Support</h2>
+      <div class="setting-item">📞 Contact Support: +91 1800-123-456</div>
+      <div class="setting-item">📧 Email: support@farmerapp.com</div>
+      <div class="setting-item">📖 User Guide <button>Open</button></div>
+    </div>
+   </div>
+  </div>
+
+  
+  <!--feeedback-->
+
+  <div class="tab-content" id="feadback">
+      <h2> Feadback </h2>
+      <div class="setting-item"> Product </div>
+      <div class="setting-item"> Rating </div>
+      <div class="setting-item"> Message <button>Open</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openTab(tabId) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+    event.target.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

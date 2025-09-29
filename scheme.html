@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Farmer Schemes</title>
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --secondary: #a5d6a7;
+      --light: #f4faf4;
+      --dark: #1b5e20;
+      --radius: 10px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background: var(--light); color: #222; line-height: 1.5; }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    header h1 { font-size: 20px; }
+    nav a {
+      color:white;
+      margin:0 12px;
+      text-decoration:none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background: url("https://images.unsplash.com/photo-1582515073490-dc82d91bcbee?auto=format&fit=crop&w=1350&q=80") no-repeat center/cover;
+      color:white;
+      text-align:center;
+      padding:80px 20px;
+    }
+    .hero h2 { font-size: 32px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; margin-bottom: 20px; }
+    .hero button {
+      padding:12px 20px;
+      border:none;
+      border-radius: var(--radius);
+      background: var(--secondary);
+      color: var(--dark);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section { padding: 40px 20px; max-width: 1000px; margin:auto; }
+    h2 { text-align:center; margin-bottom:20px; color:var(--dark); }
+
+    .scheme-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card {
+      background:white;
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+    .card h3 { margin-bottom:10px; color:var(--primary); }
+
+    form {
+      background:white;
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      max-width:600px;
+      margin:auto;
+    }
+    form label { display:block; margin:10px 0 5px; }
+    form input, form textarea {
+      width:100%; padding:10px; border:1px solid #ccc;
+      border-radius:var(--radius);
+    }
+    form button {
+      margin-top:15px;
+      background:var(--primary);
+      color:white;
+      border:none;
+      padding:12px;
+      border-radius:var(--radius);
+      cursor:pointer;
+      font-weight:bold;
+    }
+    form button:hover { background: var(--dark); }
+
+    footer {
+      background:var(--dark);
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Farmer Welfare Portal</h1>
+    <!-- Sidebar -->
+   <nav>
+  <a href="home.html">🏠 Home</a>
+  <a href="scheme.html"> scheme</a>
+
+   </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h2>Government Schemes for Farmers</h2>
+    <p>Explore benefits, subsidies, and support programs for a better future.</p>
+    <button onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'});">Apply Now</button>
+  </section>
+
+  <!-- SCHEMES -->
+  <section id="schemes">
+    <h2>Available Schemes</h2>
+    <div class="scheme-grid">
+      <div class="card">
+        <h3>Pradhan Mantri Fasal Bima Yojana</h3>
+        <p>Insurance coverage and financial support to farmers in case of crop failure due to natural calamities, pests & diseases.</p>
+      </div>
+      <div class="card">
+        <h3>PM-KISAN</h3>
+        <p>Income support of ₹6,000 per year to all farmer families in three equal installments.</p>
+      </div>
+      <div class="card">
+        <h3>Kisan Credit Card</h3>
+        <p>Timely credit support for farmers to meet cultivation and other needs at low interest rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <h2>Apply for a Scheme</h2>
+    <form id="applyForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="aadhar">Aadhaar Number</label>
+      <input type="text" id="aadhar" name="aadhar" required>
+
+      <label for="scheme">Scheme Name</label>
+      <input type="text" id="scheme" name="scheme" required>
+
+      <label for="message">Additional Details</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact & Helpline</h2>
+    <p><strong>Toll-free:</strong> 1800-123-456</p>
+    <p><strong>Email:</strong> support@farmer.gov.in</p>
+    <p><strong>Office:</strong> Ministry of Agriculture, New Delhi</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Government of India — Farmer Welfare Portal
+  </footer>
+
+  <script>
+    // Demo: handle form submit
+    document.getElementById("applyForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Application submitted successfully! (Demo only)");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

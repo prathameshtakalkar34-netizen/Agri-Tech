@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Profiles</title>
+<link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/colour.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="home.html">🏠 Home</a>
+      <a href="profile.html" class="active">👤 Profile</a>
+      <a href="history.html">📜 History</a>
+      <a href="data.html">📊 Data</a>
+      <a href="settings.html">⚙ Settings</a>
+      <a href="image.html">🖼 Images</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <h1>Welcome, <span id="farmer id">Farmer</span> 👋</h1>
+
+      <div class="header">
+        <h2>👨 Farmer Information</h2>
+        <button id="addFarmerBtn" class="btn">➕ Add Farmer</button>
+      </div>
+
+      <div id="farmerList" class="categories">
+        <!-- Farmers will appear here dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/profile.js"></script>
+</body>
+</html>

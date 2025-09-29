@@ -1,0 +1,142 @@
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  background: #f5f7f5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 100vh;
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.sidebar a:hover {
+  background: #1abc9c;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Hero */
+.hero {
+  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc2M3wwfDF8c2VhcmNofDF8fGZhcm18ZW58MHx8fHwxNjk1MDE4NjYy&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+.hero-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.hero-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.category-card {
+  flex: 1 1 150px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.dashboard-card {
+  flex: 1 1 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Crop Analysis */
+.crop-analysis {
+  margin-bottom: 40px;
+}
+.analysis-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.2s;
+}
+.analysis-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* Voice Assistant */
+#voiceBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 50%;
+  border: none;
+  background: #1abc9c;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+#voiceBtn:hover {
+  transform: scale(1.1);
+}

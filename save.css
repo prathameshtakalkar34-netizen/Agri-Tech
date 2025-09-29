@@ -1,0 +1,38 @@
+/* Ensure main content does not overlap sidebar */
+.main {
+  flex: 1;
+  padding: 20px;
+  margin-left: var(--sidebar-w);
+  overflow-y: auto;
+}
+
+/* Gallery images */
+#gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Camera panel responsive */
+.camera-panel {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+@media(max-width:900px){
+  .camera-panel {
+    flex-direction: column;
+  }
+  #video {
+    height: 300px;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+      font-size: 26px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2e7d32;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #555;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>🌾 Farmer Portal Login</h2>
+
+    <form id="sendOtpForm">
+      <input type="text" id="phone" placeholder="Enter Mobile Number (+91...)" required>
+      <button type="submit" class="btn">Send OTP</button>
+    </form>
+
+    <form id="verifyOtpForm">
+      <input type="text" id="otp" placeholder="Enter OTP" required>
+      <button type="submit" class="btn">Verify OTP</button>
+    </form>
+
+    <p class="note">Secure login for farmers 🌱</p>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    // Handle Send OTP
+    document.getElementById("sendOtpForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const phone = document.getElementById("phone").value;
+
+      const res = await fetch("/send-otp", {
+        method: "POST",
+        body: new URLSearchParams({ phone })
+      });
+      const data = await res.json();
+      document.getElementById("message").innerText = data.msg;
+    });
+
+    // Handle Verify OTP
+    document.getElementById("verifyOtpForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const phone = document.getElementById("phone").value;
+      const otp = document.getElementById("otp").value;
+
+      const res = await fetch("/verify-otp", {
+        method: "POST",
+        body: new URLSearchParams({ phone, otp })
+      });
+
+      if (res.redirected) {
+        window.location.href = res.url; // Redirect to home page
+      } else {
+        const data = await res.json();
+        document.getElementById("message").innerText = data.msg;
+      }
+    });
+  </script>
+</body>
+</html>

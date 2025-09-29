@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Details</title>
+<link rel="stylesheet" href="css/profile.css">
+</head>
+<link rel="stylesheet" href="css/profile.css">
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <a href="home.html">🏠 Home</a>
+      <a href="profile.html" class="active">👤 Profile</a>
+    </div>
+
+    <div class="content">
+      <h2 id="farmerNameDetail">Farmer Name</h2>
+      <p>More information about the farmer will be displayed here.</p>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const farmers = [
+      { id: 1, name: "Rakesh" },
+      { id: 2, name: "Vansh" },
+      { id: 3, name: "Mahesh" },
+      { id: 4, name: "Pritam" }
+    ];
+    const farmer = farmers.find(f => f.id == id);
+    if(farmer){
+      document.getElementById('farmerNameDetail').textContent = farmer.name;
+    }
+
+    // In profile.js
+div.onclick = () => {
+  window.location.href = `farmer-details.html?id=${farmer.id}`;
+};
+
+  </script>
+  
+</body>
+</html>
